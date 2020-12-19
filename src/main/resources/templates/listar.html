@@ -34,7 +34,7 @@
 					<td th:text="${sorteo.numeros}"></td>
 					<td th:text="${sorteo.maximo}"></td>
 					<td><a th:href="@{/persona/registrar/} + ${sorteo.id}">
-							<button class="btn btn-primary">Registrar persona</button>
+					<button class="btn btn-primary">Registrar persona</button>
 					</a></td>
 
 					<td><a th:href="@{/sorteo/generarBoletas/} + ${sorteo.id}">
@@ -42,7 +42,6 @@
 					</a></td>
 				</tr>
 			</tbody>
-
 		</table>
 	</div>
 	<script
