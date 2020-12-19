@@ -33,33 +33,17 @@ public class SorteoController {
 	public String registrar(@RequestParam(name="nombre") String nombre, @RequestParam(name="boletas")int boletas,
 			@RequestParam(name="numeros") int numeros,@RequestParam(name="maximo") int maximo) {
 		
-		if(nombre.isEmpty() || boletas==0 || numeros==0 || maximo==0) {
-		
-			return "sorteo";
-		}
-		
-		
-			
-		
+					
 		Sorteo s = new Sorteo();
 		s.setNombre(nombre);
 		s.setBoletas(boletas);
 		s.setNumeros(numeros);
 		s.setMaximo(maximo);
 		s.setFecha(new Date());
-		if(numeros==0 || numeros >4) {
-			s.setBoletas(0);
-			}else {
-				int boleta=1;
-				for(int i=0;i<numeros;i++) {
-					boleta*=10;
-				}
-				s.setBoletas(boleta);
-			}
+		
 		 
 		sorteoDao.save(s);
 		
-		logger.info("SORTEO REGISTRADO EXITOSAMENTE");
 		
 		return "redirect:/listar";
 	}

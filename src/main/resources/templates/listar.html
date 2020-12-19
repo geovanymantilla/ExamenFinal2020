@@ -24,6 +24,7 @@
 					<th>maximo</th>
 					<th>Registrar Persona</th>
 					<th>Generar Boletas</th>
+					<th>Sortear</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,6 +41,9 @@
 					<td><a th:href="@{/sorteo/generarBoletas/} + ${sorteo.id}">
 							<button class="btn btn-primary">Generar Boletas</button>
 					</a></td>
+					<td>
+							<button class="btn btn-primary">Sortear</button>
+					</td>
 				</tr>
 			</tbody>
 		</table>
