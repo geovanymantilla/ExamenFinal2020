@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Registrar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+	<div class="container">
+		<h1>Registrar Persona</h1>
+
+		<form th:action="@{/persona/registrar/}" th:method="post">
+			<div class="form-row">
+
+				<div class="form-group col-md-12">
+					<label>Nombre</label> <input type="text" class="form-control"
+						placeholder="nombre" name="nombre">
+				</div>
+				<div style="display: none" th:each="sor: ${sorteo}">
+					<input type="hidden" class="form-control" th:value="${sor.id}"
+						name="idsorteo">
+				</div>
+
+				<div class="form-group col-md-12">
+					<label>Documento de identidad</label> <input type="text"
+						class="form-control" placeholder="documento" name="documento">
+				</div>
+
+				<div class="form-group">
+					<label>Email</label> <input type="email" class="form-control"
+						placeholder="email" name="email">
+				</div>
+				<div class="form-group">
+				<label>Numeros</label> <input type="number" class="form-control"
+					placeholder="numeros" name="numeros">
+			</div>
+				
+				<button type="submit" class="btn btn-primary">Registrar
+					Persona</button>
+			</div>
+		</form>
+	</div>
+
+
+
+	<script
+		src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
