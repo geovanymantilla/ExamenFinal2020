@@ -58,11 +58,7 @@ public class SorteoController {
 	public String GenerarBoleta(@RequestParam(name="id") int id) {
 		Sorteo sorteo=sorteoDao.findById(id).get();
 		Boleta boleta=new Boleta();
-		boleta.setSorteoBean(sorteo);
-		
-		for(int i=0; i<sorteo.getBoletas();i++) {
-			if(i<10) {}
-		}
+		boleta.setSorteoBean(sorteo);	
 		
 		return null;
 	}
