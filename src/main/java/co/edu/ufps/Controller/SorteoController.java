@@ -40,8 +40,7 @@ public class SorteoController {
 		s.setNumeros(numeros);
 		s.setMaximo(maximo);
 		s.setFecha(new Date());
-		
-		 
+				 
 		sorteoDao.save(s);
 		
 		
